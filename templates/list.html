@@ -1,0 +1,25 @@
+{% extends 'sidemenu/base.html' %}
+{% block content %}
+<main>
+    <h1>キャラクター一覧</h1>
+    <div class="container">
+    {% for item in object_list %}
+        <div class="row align-items-start mb-1">
+            <div class="col">
+                名前:{{ item.name }}
+            </div>
+            <div class="col">
+                {% if item.gender == "man" %}
+                    性別:男
+                {% else %}
+                    性別:女
+                {% endif %}
+            </div>
+            <div class="col">
+                特徴:{{ item.feature }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</main>
+{% endblock %}
